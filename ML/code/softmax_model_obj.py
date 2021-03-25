@@ -54,7 +54,7 @@ class SoftMaxModel:
 
 
     def privateFun(self, ww, batch_size=0, num_iterations=1, iter_num=0):
-        
+
         '''
         Reports the direct change to be applied, based on the given model.
         Batch size could be 1 for SGD, or 0 for full gradient.
@@ -116,7 +116,7 @@ class SoftMaxModelEvil(SoftMaxModel):
         # Just train the goal poisoned model locally
         self.weights = np.random.rand(self.d) / 100.0
 
-        for i in xrange(iterations):
+        for i in range(iterations):
 
             if batch_size > 0 and batch_size < self.X.shape[0]:
                 idx = np.random.choice(self.X.shape[0], batch_size, replace=False)
